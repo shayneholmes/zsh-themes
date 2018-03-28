@@ -3,10 +3,13 @@
 
 setopt PROMPT_SUBST
 
-MODE_INDICATOR="%{$fg_bold[yellow]%} [NORMAL] %{$reset_color%}" # for vi
+fg_bold_yellow='%B%F{yellow}'
+reset_color='%b%f'
+
+MODE_INDICATOR="%{$fg_bold_yellow%} <<< %{$reset_color%}" # for vi
 
 PROMPT='
-%n@%m %~$(vi_mode_prompt_info)
+%n@%m %~% $(vi_mode_prompt_info)
 $ '
 RPROMPT=''
 
