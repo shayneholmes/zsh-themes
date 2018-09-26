@@ -13,7 +13,7 @@ PROMPT='
 $ '
 RPROMPT=''
 
-# no colors
+# no colors in auto-completion
 zstyle ':completion:*' list-colors '=*=0'
 
 # stop beeping so much!
