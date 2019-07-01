@@ -8,9 +8,13 @@ reset_color='%b%f'
 
 MODE_INDICATOR="%{$fg_bold_yellow%} <<< %{$reset_color%}" # for vi
 
-PROMPT='
-%n@%m %~$(git_prompt_info)$(git_remote_status)$(vi_mode_prompt_info)
-$ '
+local exitcode=$'%(?..\n(exited with code %?%))'
+local git_info='$(git_prompt_info)$(git_remote_status)'
+local vi_info='$(vi_mode_prompt_info)'
+
+PROMPT="$exitcode
+%n@%m %~%{$git_info%}%{$vi_info%}
+$ "
 RPROMPT=''
 
 # no colors in auto-completion
