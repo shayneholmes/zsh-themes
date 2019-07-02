@@ -14,7 +14,7 @@ local vi_info='$(vi_mode_prompt_info)'
 
 PROMPT="$exitcode
 %n@%m %~%{$git_info%}%{$vi_info%}
-$ "
+%(!.#.$) "
 RPROMPT=''
 
 # no colors in auto-completion
